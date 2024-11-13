@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20241113140254">
+	<link rel="stylesheet" href="css/style.min.css?_v=20241113143110">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1140,10 +1140,39 @@
 									</svg>
 								</div>
 							</div>
-							<label for="telegram" class="pre-footer__form-label">Месенджер для связи
+							<!-- <label for="telegram" class="pre-footer__form-label"
+                  >Месенджер для связи
+                </label>
+                <div class="pre-footer__form-input-box telegram">
+                  <select name="pre-footer" data-class-modif="pre-footer">
+                    <option
+                      data-imgsoc="img/telegram-2.webp"
+                      value="1"
+                      selected
+                    >
+                      Telegram
+                    </option>
+                    <option data-imgsoc="img/whatsapp.webp" value="2">
+                      WhatsApp
+                    </option>
+                    <option data-imgsoc="img/viber.webp" value="3">
+                      Viber
+                    </option>
+                  </select>
+                </div>
+                <div class="pre-footer__form-input-box nickname">
+                  <input
+                    class="pre-footer__form-input nickname"
+                    type="text"
+                    id="nickname"
+                    placeholder="ID или @nickname"
+                  />
+                </div> -->
+							<label for="messenger" class="pre-footer__form-label">
+								Месенджер для связи
 							</label>
 							<div class="pre-footer__form-input-box telegram">
-								<select name="pre-footer" data-class-modif="pre-footer">
+								<select name="pre-footer" id="messenger" data-class-modif="pre-footer">
 									<option data-imgsoc="img/telegram-2.webp" value="1" selected>
 										Telegram
 									</option>
@@ -1156,8 +1185,11 @@
 								</select>
 							</div>
 							<div class="pre-footer__form-input-box nickname">
-								<input class="pre-footer__form-input nickname" type="text" id="nickname" placeholder="ID или @nickname" />
+								<label for="nickname" class="pre-footer__form-label">
+									<input class="pre-footer__form-input" type="text" id="nickname" placeholder="ID или @nickname" />
+								</label>
 							</div>
+
 							<button type="button" class="pre-footer__button">
 								<p class="pre-footer__button-text">Начать путешествие!</p>
 							</button>
@@ -1274,7 +1306,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="js/app.min.js?_v=20241113140254"></script>
+	<script src="js/app.min.js?_v=20241113143110"></script>
 </body>
 
 </html>

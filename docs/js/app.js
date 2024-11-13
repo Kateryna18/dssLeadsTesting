@@ -14558,10 +14558,6 @@
                     const imgSrc = selectedOption.getAttribute("data-imgsoc");
                     selectItem.style.setProperty("--img-url", `url(../${imgSrc})`);
                 }
-                if (selectedOption.hasAttribute("data-lang")) {
-                    const lang = selectedOption.getAttribute("data-lang");
-                    window.location.href = `/${lang}`;
-                }
                 selectItemBody.insertAdjacentHTML("afterbegin", this.getSelectTitleValue(selectItem, originalSelect));
                 originalSelect.hasAttribute("data-search") ? this.searchActions(selectItem) : null;
             }

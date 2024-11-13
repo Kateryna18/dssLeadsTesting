@@ -290,11 +290,11 @@ class SelectConstructor {
 		
 
 		// Проверка наличия атрибута 'data-lang'
-		if (selectedOption.hasAttribute('data-lang')) {
-			const lang = selectedOption.getAttribute('data-lang');
-			// Перенаправляем на страницу с языком, если атрибут присутствует
-			window.location.href = `/${lang}`;
-		}
+		// if (selectedOption.hasAttribute('data-lang')) {
+		// 	const lang = selectedOption.getAttribute('data-lang');
+		// 	// Перенаправляем на страницу с языком, если атрибут присутствует
+		// 	window.location.href = `/${lang}`;
+		// }
 
 		
 		// Добавляем HTML заголовка select в selectItemBody
