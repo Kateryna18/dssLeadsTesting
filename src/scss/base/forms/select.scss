@@ -1,0 +1,291 @@
+// <SELECT>
+// Сніппет (HTML): sel
+.select {
+  min-width: 0;
+  position: relative;
+  // .select__body
+  &__body {
+    position: relative;
+    color: #fff;
+    font-size: 16px;
+    line-height: 130%;
+  }
+  // .select__title
+  &__title {
+    display: block;
+    width: 72px;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 16px;
+    border: 1px solid #fff;
+    background-color: #ffffff1a;
+    backdrop-filter: blur(25px);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .select.select_form._select-active._select-focus._select-open &__title{
+	border-radius: 16px 16px 0 0;
+  }
+  // .select__value
+  &__value {
+    display: flex;
+    align-items: center;
+    gap: toRem(5);
+    > * {
+      flex: 1 1 auto;
+    }
+    &:after {
+      content: "";
+	  position: absolute;
+	  right: 15px;
+	  top: 11px;
+      align-self: stretch;
+      transition: all 0.3s ease 0s;
+	  width: 7px;
+	  height: 7px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-left: 2px solid white;
+      border-bottom: 2px solid white;
+	  transform: rotate(-45deg);
+      ._select-open & {
+        transform: rotate(-225deg);
+      }
+    }
+    &._select-pseudo-label {
+      &::before {
+        content: attr(data-pseudo-label);
+        opacity: 0.5;
+      }
+    }
+  }
+  // .select__content
+  &__content {
+    flex: 1 1 auto;
+    // overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 16px;
+	font-weight: 500;
+    line-height: 130%;
+	text-shadow: 
+        -1px -1px 0 black,  
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
+  }
+  // .select__text
+  &__text {
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    height: 100%;
+  }
+  // .select__options
+  &__options {
+    color: #fff;
+    position: absolute;
+    top: calc(100% - toRem(1));
+    border-radius: 0 0 16px 16px;
+    min-width: 100%;
+    left: 0;
+    background-color: #ffffff1a;
+    border-top: 0;
+    border: 1px solid #d9d9d9;
+    border-top: 0;
+    padding: 10px 0px 5px 0px;
+  }
+  // .select__scroll
+  &__scroll {
+    overflow-y: auto;
+    overflow-x: hidden;
+    // Максимальна висота
+    max-height: toRem(200);
+    // Стилі скроллбару
+    .simplebar-scrollbar {
+      &::before {
+      }
+    }
+  }
+  // .select__option
+  &__option {
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 5px 15px;
+    color: inherit;
+	transition: all 0.5s ease;
+    &._select-selected {
+      background-color: #eee;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+		color: #c20505;
+      }
+    }
+  }
+
+  // Конструкція додаткових даних
+  &__row {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__asset {
+  }
+  &__text {
+  }
+
+  &--show-top {
+    .select__options {
+      top: auto;
+      bottom: calc(100% - toRem(1));
+      border: 1px solid #d9d9d9;
+      border-bottom: 0;
+      border-radius: 4px 4px 0 0;
+      padding: 5px 0px 10px 0px;
+    }
+  }
+}
+
+// Тег
+._select-tag {
+  cursor: pointer;
+}
+
+.select.select_pre-footer{
+  display: block;
+  width: 290px;
+  background-color: #2C2C2C;
+  padding: 13px 20px;
+  border-radius: 8px;
+  border: 1px solid #9C9C9C;
+
+  & .select__body{
+    width: 100%;
+  }
+
+  & .select__title{
+    width: 100%;
+    padding-left: 40px;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  & .select__options{
+    position: static;
+    border-radius: 0;
+    border: none;
+    background-color: transparent;
+  }
+
+  & .select__content{
+    font-size: 12px;
+    line-height: 130%;
+  }
+
+  & .select__content::before{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 24px;
+    height: 24px;
+    background-image: var(--img-url);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  & .select__option{
+    position: relative;
+    padding-left: 40px;
+    padding-bottom: 10px;
+    color: white;
+    font-size: 12px;
+    line-height: 130%;
+  }
+
+  & .select__option:nth-child(1)::before{
+    content: url(../img/telegram.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+
+  & .select__option:nth-child(2)::before{
+    content: url(../img/whatsapp.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+
+  & .select__option:nth-child(3)::before{
+    content: url(../img/viber.png);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    
+  }
+}
+@media (min-width: 1200px) {
+  .select.select_pre-footer{
+    width: 515px;
+    padding: 15px 20px;
+  }
+
+  .select.select_pre-footer{
+    & .select__content{
+      font-size: 16px;
+    }
+
+    & .select__option{
+      font-size: 16px;
+    }
+
+    & .select__option:nth-child(1)::before{
+      content: url(../img/telegram.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  
+    & .select__option:nth-child(2)::before{
+      content: url(../img/whatsapp.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  
+    & .select__option:nth-child(3)::before{
+      content: url(../img/viber.png);
+      position: absolute;
+      left: 0;
+      width: 24px;
+      height: 24px;
+      
+    }
+  }
+}
